@@ -39,3 +39,53 @@ function generateWorks(works) {
 generateWorks(works);
 
 
+//gestion boutons
+
+//filter All
+
+const buttonAll = document.querySelector(".btn-all");
+
+    buttonAll.addEventListener("click", function() {
+        document.querySelector(".gallery").innerHTML = "";
+        generateWorks(works);
+})
+
+
+//Filter Objects
+
+const buttonObjects = document.querySelector(".btn-objects");
+
+    buttonObjects.addEventListener("click", function() {
+        const worksObjects = works.filter(function(works) {
+            return works.categoryId == 1;
+        });
+        document.querySelector(".gallery").innerHTML = "";
+        generateWorks(worksObjects);
+
+})
+
+//Filter Appartments
+
+const buttonAppartments = document.querySelector(".btn-appartments");
+
+    buttonAppartments.addEventListener("click", function() {
+        const worksAppartments = works.filter(function(works) {
+            return works.categoryId == 2;
+        });
+        document.querySelector(".gallery").innerHTML = "";
+        generateWorks(worksAppartments);
+
+})
+
+//Filter Appartments
+
+const buttonHotels = document.querySelector(".btn-hotels");
+
+    buttonHotels.addEventListener("click", function() {
+        const worksHotels = works.filter(function(works) {
+            return works.categoryId == 3;
+        });
+        document.querySelector(".gallery").innerHTML = "";
+        generateWorks(worksHotels);
+
+})
