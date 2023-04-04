@@ -1,5 +1,6 @@
-import {ajoutListenerLogin} from "./login.js";
+//import {ajoutListenerLogin} from "./login.js";  //NE VA PAS DANS CE FICHIER JS
 
+//ajoutListenerLogin(); //NON PLUS
 
 //Recuperation Données API
 
@@ -17,10 +18,9 @@ if (works === null) {
     works = JSON.parse(works);
 }
 
-ajoutListenerLogin()
-
 
 function generateWorks(works) {
+    
     for (let i=0; i < works.length; i++) {
 
         const article = works[i];
@@ -94,4 +94,5 @@ const buttonHotels = document.querySelector(".btn-hotels");
         document.querySelector(".gallery").innerHTML = "";
         generateWorks(worksHotels);
 
-})
+});
+
