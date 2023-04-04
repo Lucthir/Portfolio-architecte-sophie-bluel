@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #FFFEF8;
 }
 ol, ul {
 	list-style: none;
@@ -84,6 +85,13 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+/*Partie Nav*/
+
+header a{
+	text-decoration: none;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -95,9 +103,20 @@ nav li {
 	font-size: 1.2em;
 }
 
+nav a {
+	text-decoration: none;
+}
+
 li:hover {
 	color: #B1663C;
 }
+
+nav a:hover {
+	color: #B1663C;
+}
+
+/* Intro */
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -121,6 +140,38 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+/*Filters*/
+
+.filters {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom : 30px;
+}
+
+.filters button {
+	padding:5px 15px 5px 15px;
+	border-radius: 15px;
+	margin-left : 5px;
+	margin-right: 5px;
+	background-color: transparent;
+	color:#1D6154;
+	border:#1D6154 1px solid;
+	font-family: 'Syne'
+}
+
+.filters button:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
+.filters button:active{
+	background-color: #113831;
+}
+
+/*Gallery*/
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -137,6 +188,9 @@ li:hover {
 	width: 100%;
 
 }
+
+/*Contact*/
+
 #contact {
 	width: 50%;
 margin: auto;
@@ -180,35 +234,49 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+/*Footer*/
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
-.filters {
+/*Log in*/
+
+#login {
+	width: 50%;
+margin: auto;
+}
+#login > * {
+	text-align: center;
+
+}
+#login h2{
+	margin-bottom: 20px;
+}
+#login form {
+	text-align: left;
+	margin-top:30px;
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	margin-bottom : 30px;
+	flex-direction: column;
 }
 
-.filters button {
-	padding:5px 15px 5px 15px;
-	border-radius: 15px;
-	margin-left : 5px;
-	margin-right: 5px;
-	background-color: transparent;
-	color:#1D6154;
-	border:#1D6154 1px solid;
-	font-family: 'Syne'
+#login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+#login label {
+	margin: 2em 0 1em 0;
+}
+#login textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-.filters button:hover {
-	background-color: #1D6154;
-	color: white;
-}
-
-.filters button:active{
-	background-color: #113831;
+#login a {
+	text-align: center;
+	color: black;
 }
