@@ -1,3 +1,6 @@
+import {ajoutListenerLogin} from "./login.js";
+
+
 //Recuperation Données API
 
 let works = window.localStorage.getItem('works');
@@ -13,6 +16,9 @@ if (works === null) {
 } else {
     works = JSON.parse(works);
 }
+
+ajoutListenerLogin()
+
 
 function generateWorks(works) {
     for (let i=0; i < works.length; i++) {

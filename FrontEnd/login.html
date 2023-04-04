@@ -10,6 +10,7 @@
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<script type="module" src="/Backend/works.js"></script>
+    <script type="module" src="/Backend/login.js"></script>
 </head>
 <body>
     <header>
@@ -26,12 +27,12 @@
     <main>
         <section id="login">
             <h2>Log In</h2>
-            <form action="#" method="post">
+            <form class="login-form">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" id="email">
-                <label for="mdp">Mot de passe</label>
-                <input type="password" name="mdp" id="mdp"></textarea>
-                <input type="submit" value="Se connecter">
+                <input type="email" name="email" placeholder="E-mail">
+                <label for="password">Mot de passe</label>
+                <input type="password" name="password" placeholder="Mot de passe">
+                <input type="submit" value="Se connecter" id="login-submit">
                 <a href="#">Mot de passe oublié</a>
             </form>
         </section>
