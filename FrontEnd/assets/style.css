@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+	background-color: #FFFEF8;
 }
 ol, ul {
 	list-style: none;
@@ -53,11 +54,13 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0
+	margin: 50px 0;
 }
+
 section {
 	margin: 50px 0
 }
@@ -84,6 +87,13 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
+/*Partie Nav*/
+
+header a{
+	text-decoration: none;
+}
+
 nav ul {
 	display: flex;
 	align-items: center;
@@ -95,9 +105,21 @@ nav li {
 	font-size: 1.2em;
 }
 
+nav a {
+	text-decoration: none;
+	color : black;
+}
+
 li:hover {
 	color: #B1663C;
 }
+
+nav a:hover {
+	color: #B1663C;
+}
+
+/* Intro */
+
 #introduction {
 	display: flex;
 	align-items: center;
@@ -121,6 +143,38 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+
+/*Filters*/
+
+.filters {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-bottom : 30px;
+}
+
+.filters button {
+	padding:5px 15px 5px 15px;
+	border-radius: 15px;
+	margin-left : 5px;
+	margin-right: 5px;
+	background-color: transparent;
+	color:#1D6154;
+	border:#1D6154 1px solid;
+	font-family: 'Syne'
+}
+
+.filters button:hover {
+	background-color: #1D6154;
+	color: white;
+}
+
+.filters button:active{
+	background-color: #113831;
+}
+
+/*Gallery*/
+
 #portfolio h2 {
 	text-align: center;
 	margin-bottom: 1em;
@@ -137,6 +191,9 @@ li:hover {
 	width: 100%;
 
 }
+
+/*Contact*/
+
 #contact {
 	width: 50%;
 margin: auto;
@@ -180,9 +237,127 @@ input[type="submit"]{
 	border-radius: 60px ;
 }
 
+/*Footer*/
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
 }
 
+/*Log in*/
+
+#login {
+	width: 50%;
+margin: auto;
+}
+#login > * {
+	text-align: center;
+
+}
+#login h2{
+	margin-bottom: 20px;
+}
+#login form {
+	text-align: left;
+	margin-top:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+#login input {
+	height: 50px;
+	font-size: 1.2em;
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+	padding-left:20px;
+}
+#login label {
+	margin: 2em 0 1em 0;
+}
+#login textarea {
+	border: none;
+	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
+}
+
+#login a {
+	text-align: center;
+	color: black;
+}
+
+#login-submit:active{
+	background-color: #113831;
+}
+
+/*Partie Edit mode*/
+
+#edit-top{
+	display: flex;
+	background-color: black;
+	color: white;
+	align-items: center;
+	justify-content: center;
+	gap:30px;
+	height:50px;
+	margin-left:-14%;
+	width:129%;
+}
+
+#edit-top a{
+	text-decoration: none;
+	color: white;
+}
+
+.modif-btn {
+	text-decoration: none;
+	color: black;
+}
+
+.modif-btn:hover{
+	text-decoration: underline;
+}
+
+
+#intro-picture img{
+	margin-bottom:15px;
+}
+
+#title-edit{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom : 30px;
+}
+
+#intro-picture i{
+	color: #1D6154;
+}
+
+.modify{
+	display: flex;
+	gap : 5px;
+}
+
+#modif-btn-1:hover{
+	text-decoration: underline;
+}
+
+#modif-btn-2{
+	margin-left : 55px;
+}
+
+#modif-btn-3{
+	margin-left : 25px;
+	margin-bottom : 25px;
+}
+
+#publish-btn{
+	padding : 10px;
+}
+
+#publish-btn:hover{
+	background-color: white;
+	color : black;
+	border-radius: 15px;
+}
