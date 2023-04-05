@@ -1,7 +1,3 @@
-//import {ajoutListenerLogin} from "./login.js";  //NE VA PAS DANS CE FICHIER JS
-
-//ajoutListenerLogin(); //NON PLUS
-
 //Recuperation Données API
 
 let works = window.localStorage.getItem('works');
@@ -43,6 +39,35 @@ function generateWorks(works) {
 }
 
 generateWorks(works);
+
+//Gallery mini
+
+function generateWorksMini(works) {
+    
+    for (let i=0; i < works.length; i++) {
+
+        const article = works[i];
+        // Récupération de l'élément du DOM qui accueillera les elements gallery
+        const sectionGalleryMini = document.querySelector(".gallery-mini");
+        // Création d’une balise dédiée à un travail
+        const workElement = document.createElement("article");
+        workElement.dataset.id = works[i].id;
+        // Création des balises titres et images
+        const imageElement = document.createElement("img");
+        imageElement.src = article.imageUrl;
+        const editElement = document.createElement("a");
+        editElement.setAttribute('href', '#')
+        editElement.innerText = "éditer";
+
+        // On rattache la balise article a la section Gallery
+        sectionGalleryMini.appendChild(workElement);
+        workElement.appendChild(imageElement);
+        workElement.appendChild(editElement);
+    }
+}
+
+generateWorksMini(works);
+
 
 
 //gestion boutons
