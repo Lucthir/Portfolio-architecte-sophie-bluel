@@ -1,6 +1,6 @@
 
 
-export function ajoutListenerLogin() {
+function ajoutListenerLogin() {
     const loginForm = document.querySelector(".login-form");
     loginForm.addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -20,10 +20,17 @@ export function ajoutListenerLogin() {
                 if (result.error) {
                     alert("Combinaison E-mail/Mot de passe éronnée") ;
                 }else{
-                    alert("Bienvenue");
+                    let token = result.token;
+                    window.localStorage.setItem("token", token);
                     window.location.href="./index.html";
             }    
         }); 
 }
 
 ajoutListenerLogin();
+
+
+
+
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4MDYyMDg0OSwiZXhwIjoxNjgwNzA3MjQ5fQ.ap3ZAQLTv2oJGUbihBfflCv77p1hvuXCumiSq4E0b2Q

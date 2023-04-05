@@ -9,25 +9,42 @@
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
-	<script type="module" src="/Backend/works.js"></script>
+	<script src="https://kit.fontawesome.com/7797ddbf80.js" crossorigin="anonymous"></script>	
 	
 </head>
+
 <body>
+
+	<aside id="edit-top" class="edit" style="display:none">
+		<div class="modify" id="modif-btn-1">
+			<i class="fa-regular fa-pen-to-square" ></i>
+			<a href="#">Mode édition</a>
+		</div>
+		<a href="#" id="publish-btn">publier les changements</a>
+	</aside>
+
+	
+
 <header>
 	<a href="index.html"><h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1></a>
 	<nav>
 		<ul>
 			<li>projets</li>
 			<li>contact</li>
-			<li><a href="login.html">login</a></li>
+			<li><a href="login.html" id="login-btn">login</a></li>
+			<li><a href="index.html" id="logout-btn" style="display:none">logout</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
 </header>
 <main>
 	<section id="introduction">
-		<figure>
-			<img src="./assets/images/sophie-bluel.png" alt="">
+		<figure id="intro-picture">
+			<img src="./assets/images/sophie-bluel.png" alt="logo">
+			<div class="modify" style="display:none" id="modif-btn-2">
+				<i class="fa-regular fa-pen-to-square" ></i>
+				<a href="#" class="modif-btn">Modifier</a>
+			</div>
 		</figure>
 		<article>
 			<h2>Designer d'espace</h2>
@@ -36,8 +53,15 @@
 			<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG, décorateur(trice)</p>
 		</article>
 	</section>
+	<script type="module" src="/Backend/works.js"></script>
 	<section id="portfolio">
-		<h2>Mes Projets</h2>
+			<div id="title-edit">
+				<h2>Mes Projets</h2>
+				<div class="modify" style="display:none" id="modif-btn-3">
+					<i class="fa-regular fa-pen-to-square" ></i>
+					<a href="#" class="modif-btn"  >Modifier</a>
+				</div>
+			</div>
 			<div class="filters">
 				<button class="btn-all">Tous</button>
 				<br>
@@ -75,4 +99,6 @@
 	</nav>
 </footer>
 </body>
+<script src="/Backend/edit.js"></script>
+<script src="/Backend/logout.js"></script>
 </html>
