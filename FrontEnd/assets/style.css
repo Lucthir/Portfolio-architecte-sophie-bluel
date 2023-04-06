@@ -381,12 +381,13 @@ margin: auto;
 	border-radius: 10px;
 	max-width : calc(100vw - 20px);
 	max-height: calc(l00vh - 20px);
-	width : 40%;
-	height : 90%;
+	width : 630px;
+	height : 700px;
 	padding:20px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	gap : 20px;
 }
 
 .modal-wrapper h2 {
@@ -408,7 +409,7 @@ margin: auto;
 	font-weight: 700;
 	color: white;
 	background-color: #1D6154;
-	margin : 2em auto ;
+	margin : auto ;
 	padding : 15px;
 	width: 180px;
 	text-align: center;
@@ -441,6 +442,7 @@ margin: auto;
 	justify-content: left;
 }
 
+
 .gallery-mini img {
 	width: 79px;
 }
@@ -453,5 +455,33 @@ margin: auto;
 
 .gallery-mini a:hover{
 	text-decoration: underline;
+}
+
+
+.gallery-mini .fa-trash-can{
+	color: white;
+	background-color: black;
+	width:20px;
+	height:23px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+}
+
+.gallery-mini article:hover .fa-arrows-up-down-left-right{
+	color: white;
+	background-color: black;
+	width:20px;
+	height:23px;
+	border-radius: 5px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.gallery-mini .fa-arrows-up-down-left-right{
+	display:none;
 }
 

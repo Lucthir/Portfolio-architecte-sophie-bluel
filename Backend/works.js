@@ -53,16 +53,24 @@ function generateWorksMini(works) {
         const workElement = document.createElement("article");
         workElement.dataset.id = works[i].id;
         // Création des balises titres et images
+        const deleteIcon = document.createElement("i");
+        deleteIcon.setAttribute('class', 'fa-solid fa-trash-can')
+        const moveIcon = document.createElement("i");
+        moveIcon.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right');
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
         const editElement = document.createElement("a");
         editElement.setAttribute('href', '#')
         editElement.innerText = "éditer";
+        
 
         // On rattache la balise article a la section Gallery
         sectionGalleryMini.appendChild(workElement);
+        workElement.appendChild(deleteIcon);
+        workElement.appendChild(moveIcon);
         workElement.appendChild(imageElement);
         workElement.appendChild(editElement);
+        
     }
 }
 
