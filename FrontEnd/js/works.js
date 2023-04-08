@@ -8,6 +8,7 @@ if (works === null) {
     works = await reponse.json();
     // Transformation des travaux en JSON
     const valeurWorks = JSON.stringify(works);
+    console.log(valeurWorks);
     // Stockage des informations dans le localStorage
     window.localStorage.setItem("works", valeurWorks);
 } else {
