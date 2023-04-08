@@ -9,6 +9,7 @@ function ajoutListenerLogin() {
                 email: event.target.querySelector("[name=email]").value,
                 password: event.target.querySelector("[name=password]").value,
             };
+
             // Appel de la fonction fetch avec toutes les informations nécessaires
             let response = await fetch("http://localhost:5678/api/users/login", {
                 method: "POST",
@@ -21,6 +22,7 @@ function ajoutListenerLogin() {
                     alert("Combinaison E-mail/Mot de passe éronnée") ;
                 }else{
                     let token = result.token;
+                    
                     window.localStorage.setItem("token", token);
                     window.location.href="./index.html";
             }    
