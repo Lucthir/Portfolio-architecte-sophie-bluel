@@ -1,19 +1,21 @@
 //Recuperation Données API
 
+window.localStorage.removeItem('works');
 let works = window.localStorage.getItem('works');
 
 if (works === null) {
     // Récupération des travaux depuis l'API
-    const reponse = await fetch('http://localhost:5678/api/works/');
+    const reponse = await fetch('http://localhost:5678/api/works');
     works = await reponse.json();
     // Transformation des travaux en JSON
     const valeurWorks = JSON.stringify(works);
-    console.log(valeurWorks);
     // Stockage des informations dans le localStorage
     window.localStorage.setItem("works", valeurWorks);
 } else {
     works = JSON.parse(works);
 }
+
+
 
 
 function generateWorks(works) {
