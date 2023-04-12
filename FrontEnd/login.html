@@ -29,9 +29,10 @@
             <h2>Log In</h2>
             <form class="login-form">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" placeholder="E-mail">
+                <input type="email" name="email" placeholder="E-mail" required>
                 <label for="password">Mot de passe</label>
-                <input type="password" name="password" placeholder="Mot de passe">
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <p id="login-wrong" style="display:none">Combinaison Email / Mot de passe érronée</p>
                 <input type="submit" value="Se connecter" id="login-submit">
                 <a href="#">Mot de passe oublié</a>
             </form>

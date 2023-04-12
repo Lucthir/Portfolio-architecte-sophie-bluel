@@ -4,6 +4,10 @@ function ajoutListenerLogin() {
     const loginForm = document.querySelector(".login-form");
     loginForm.addEventListener("submit", async function (event) {
             event.preventDefault();
+
+            for(let input of document.querySelectorAll(".login-form input")){
+                input.reportValidity();
+            }
             // Création de l’objet de la combinaison user
             const user = {
                 email: event.target.querySelector("[name=email]").value,
@@ -19,7 +23,7 @@ function ajoutListenerLogin() {
 
             let result = await response.json();  
                 if (result.error) {
-                    alert("Combinaison E-mail/Mot de passe éronnée") ;
+                    document.querySelector('#login-wrong').style.display = null;
                 }else{
                     let token = result.token;
                     

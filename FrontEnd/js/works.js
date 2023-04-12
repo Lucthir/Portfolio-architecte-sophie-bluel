@@ -50,12 +50,10 @@ function generateWorksMini(works) {
     for (let i=0; i < works.length; i++) {
 
         const article = works[i];
-        // Récupération de l'élément du DOM qui accueillera les elements gallery
+        
         const sectionGalleryMini = document.querySelector(".gallery-mini");
-        // Création d’une balise dédiée à un travail
         const workElement = document.createElement("article");
         workElement.dataset.id = works[i].id;
-        // Création des balises titres et images
         const deleteIcon = document.createElement("i");
         deleteIcon.setAttribute('class', 'fa-solid fa-trash-can')
         const moveIcon = document.createElement("i");
@@ -67,18 +65,34 @@ function generateWorksMini(works) {
         editElement.innerText = "éditer";
         
 
-        // On rattache la balise article a la section Gallery
         sectionGalleryMini.appendChild(workElement);
         workElement.appendChild(deleteIcon);
         workElement.appendChild(moveIcon);
         workElement.appendChild(imageElement);
         workElement.appendChild(editElement);
-        
     }
 }
 
 generateWorksMini(works);
+ // Création d’une balise dédiée à un travail
+        /*const workElement = document.createElement("article");
+        workElement.dataset.id = works[i].id;
+        const deleteIcon = document.createElement("i");
+        deleteIcon.setAttribute('class', 'fa-solid fa-trash-can')
+        const moveIcon = document.createElement("i");
+        moveIcon.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right');
+        const imageElement = document.createElement("img");
+        imageElement.src = article.imageUrl;
+        const editElement = document.createElement("a");
+        editElement.setAttribute('href', '#')
+        editElement.innerText = "éditer";
+        
 
+        sectionGalleryMini.appendChild(workElement);
+        workElement.appendChild(deleteIcon);
+        workElement.appendChild(moveIcon);
+        workElement.appendChild(imageElement);
+        workElement.appendChild(editElement);*/
 
 
 //gestion boutons

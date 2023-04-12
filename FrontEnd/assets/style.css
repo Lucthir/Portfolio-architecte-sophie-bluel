@@ -289,6 +289,12 @@ margin: auto;
 	background-color: #113831;
 }
 
+#login-wrong{
+	color:red;
+	margin-top:15px;
+	margin-left : 10px;
+}
+
 /*Partie Edit mode*/
 
 #edit-top{
@@ -299,8 +305,8 @@ margin: auto;
 	justify-content: center;
 	gap:30px;
 	height:50px;
-	margin-left:-14%;
-	width:129%;
+	margin-left:-50%;
+	width:200%;
 }
 
 #edit-top a{
@@ -397,6 +403,89 @@ margin: auto;
 	color: black;
 }
 
+#modal-work{
+	display:flex;
+	flex-direction: column;
+}
+
+#modal-add{
+	display:none;
+	flex-direction:column;
+}
+
+#modal-add .add-form{
+	display:flex;
+	flex-direction: column;
+	width:100%;
+	align-items: center;
+	justify-content: center;
+}
+
+
+#input-image{
+	display:none;
+}
+
+.input-file-part {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	background-color: #E8F1F6;
+	width:60%;
+	height:160px;
+	gap: 10px;
+	padding: 30px;
+	padding-bottom : 10px;
+	margin-bottom : 10px;
+}
+
+.custom-image-button{
+	background-color: #CBD6DC;
+	padding : 20px;
+	border-radius: 45px;
+}
+
+.custom-image-button:hover{
+	cursor:pointer;
+	background-color: #a7b7c0;
+}
+
+.input-file-part i {
+	color : #B9C5CC;
+}
+
+
+#input-title, #input-category {
+	width : 60%;
+	height : 40px;
+	margin : 10px;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	margin-top : 10px;
+}
+
+#custom-category-label, #custom-title-label{
+	margin-top:20px;
+	margin-bottom:5x;
+	align-self: self-start;
+	margin-left : 20%;
+}
+
+
+#add-submit{
+	width : 40%;
+	background-color: #A7A7A7;
+	border:none;
+	height:35px;
+	margin-top: 50px;
+}
+
+#miniDisplay{
+	width : 38%;
+}
+
+
 .js-modal-close {
 	align-self: self-end;
 	background-color: transparent;
@@ -443,22 +532,23 @@ margin: auto;
 }
 
 
-.gallery-mini img {
+.gallery-mini article img {
 	width: 79px;
 }
 
-.gallery-mini a{
+.gallery-mini article a{
 	margin-top : 3px;
 	text-decoration: none;
 	color: black;
+	font-family: 'Work Sans', sans-serif;
 }
 
-.gallery-mini a:hover{
+.gallery-mini article a:hover{
 	text-decoration: underline;
 }
 
 
-.gallery-mini .fa-trash-can{
+.icons .fa-trash-can{
 	color: white;
 	background-color: black;
 	width:20px;
@@ -467,7 +557,7 @@ margin: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 1;
+
 }
 
 .gallery-mini article:hover .fa-arrows-up-down-left-right{
@@ -481,7 +571,8 @@ margin: auto;
 	align-items: center;
 }
 
-.gallery-mini .fa-arrows-up-down-left-right{
+.icons .fa-arrows-up-down-left-right{
 	display:none;
 }
+
 
