@@ -35,8 +35,3 @@ function ajoutListenerLogin() {
 
 ajoutListenerLogin();
 
-
-
-
-
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY4MDYyMDg0OSwiZXhwIjoxNjgwNzA3MjQ5fQ.ap3ZAQLTv2oJGUbihBfflCv77p1hvuXCumiSq4E0b2Q

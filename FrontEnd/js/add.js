@@ -1,4 +1,4 @@
-function ajoutListenerAddWork() {
+function addWork() {
     const selectForm = document.querySelector(".add-form");
     selectForm.addEventListener("submit", sendWork)
 
@@ -34,15 +34,14 @@ function ajoutListenerAddWork() {
             
             let result = await response.json(); 
                 
-                //alert(JSON.stringify(result))  
+                alert(JSON.stringify(result))  
                 
-                
-                //window.location.href="./index.html";
+                window.location.href="./index.html";
 
     }
 }
 
-ajoutListenerAddWork()
+addWork()
 
 
 
@@ -70,8 +69,3 @@ const loadFile = function(event) {
 
 
 
-function deleteWork() {
-    
-}
-
-deleteWork()

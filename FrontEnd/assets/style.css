@@ -368,7 +368,7 @@ margin: auto;
 	border-radius: 15px;
 }
 
-/*Partie modale Work*/
+/*Partie modale*/
 
 .modal {
 	position :fixed;
@@ -403,10 +403,109 @@ margin: auto;
 	color: black;
 }
 
+/*Modale Work*/
+
 #modal-work{
 	display:flex;
 	flex-direction: column;
 }
+
+.js-modal-close {
+	align-self: self-end;
+	background-color: transparent;
+	border: none;
+	margin-right: 3%;
+}
+
+.modal-submit{
+	font-family: 'Syne';
+	font-weight: 700;
+	color: white;
+	background-color: #1D6154;
+	margin : auto ;
+	padding : 15px;
+	width: 180px;
+	text-align: center;
+	border-radius: 60px ;
+	text-decoration: none;
+
+}
+
+.modal-delete {
+	color: red;
+	text-align: center;
+}
+
+.gallery-mini {
+	width: 77%;
+	max-height: 60%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: left;
+	gap : 10px;
+	margin-left: 13%;
+	margin-right: 13%;
+	margin-bottom : 8%;
+}
+
+.gallery-mini article{
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	position: relative;
+}
+
+
+.gallery-mini article img {
+	width: 79px;
+}
+
+.gallery-mini article a{
+	margin-top : 3px;
+	text-decoration: none;
+	color: black;
+	font-family: 'Work Sans', sans-serif;
+}
+
+.gallery-mini article a:hover{
+	text-decoration: underline;
+}
+
+
+.fa-trash-can{
+	color: white;
+	background-color: black;
+	width:20px;
+	height:23px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position : absolute;
+	top :5px;
+	right : 5px;
+}
+
+.gallery-mini article:hover .fa-arrows-up-down-left-right{
+	color: white;
+	background-color: black;
+	width:20px;
+	height:23px;
+	border-radius: 5px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top :5px;
+	right : 27px;
+}
+
+.fa-arrows-up-down-left-right{
+	display:none;
+}
+
+/*Modale Add*/
 
 #modal-add{
 	display:none;
@@ -486,93 +585,6 @@ margin: auto;
 }
 
 
-.js-modal-close {
-	align-self: self-end;
-	background-color: transparent;
-	border: none;
-	margin-right: 3%;
-}
 
-.modal-submit{
-	font-family: 'Syne';
-	font-weight: 700;
-	color: white;
-	background-color: #1D6154;
-	margin : auto ;
-	padding : 15px;
-	width: 180px;
-	text-align: center;
-	border-radius: 60px ;
-	text-decoration: none;
-
-}
-
-.modal-delete {
-	color: red;
-	text-align: center;
-}
-
-.gallery-mini {
-	width: 77%;
-	max-height: 60%;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: left;
-	gap : 10px;
-	margin-left: 13%;
-	margin-right: 13%;
-	margin-bottom : 8%;
-}
-
-.gallery-mini article{
-	display: flex;
-	flex-direction: column;
-	justify-content: left;
-}
-
-
-.gallery-mini article img {
-	width: 79px;
-}
-
-.gallery-mini article a{
-	margin-top : 3px;
-	text-decoration: none;
-	color: black;
-	font-family: 'Work Sans', sans-serif;
-}
-
-.gallery-mini article a:hover{
-	text-decoration: underline;
-}
-
-
-.icons .fa-trash-can{
-	color: white;
-	background-color: black;
-	width:20px;
-	height:23px;
-	border-radius: 5px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-}
-
-.gallery-mini article:hover .fa-arrows-up-down-left-right{
-	color: white;
-	background-color: black;
-	width:20px;
-	height:23px;
-	border-radius: 5px;
-	display:flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.icons .fa-arrows-up-down-left-right{
-	display:none;
-}
 
 

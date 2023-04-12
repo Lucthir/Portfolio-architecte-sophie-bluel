@@ -44,8 +44,13 @@ function generateWorks(works) {
 generateWorks(works);
 
 //Gallery mini
+function deleteWork() { //Il faut récupérer l'ID du work (vérifie d'abord avec console.log) qui a été supprimé et construire une fonction pour delete le work en question
+    alert("function declenchée")
+    return console.log("function declenchée")
+}
 
-function generateWorksMini(works) {
+
+export function generateWorksMini(works) {
     
     for (let i=0; i < works.length; i++) {
 
@@ -54,8 +59,9 @@ function generateWorksMini(works) {
         const sectionGalleryMini = document.querySelector(".gallery-mini");
         const workElement = document.createElement("article");
         workElement.dataset.id = works[i].id;
-        const deleteIcon = document.createElement("i");
-        deleteIcon.setAttribute('class', 'fa-solid fa-trash-can')
+        const deleteIcon = document.createElement("a");
+        deleteIcon.setAttribute('class', 'delete-icon')
+        deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
         const moveIcon = document.createElement("i");
         moveIcon.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right');
         const imageElement = document.createElement("img");
@@ -64,35 +70,22 @@ function generateWorksMini(works) {
         editElement.setAttribute('href', '#')
         editElement.innerText = "éditer";
         
+        //PB je dois save le CSS pour que les icones apparaissent correctement
 
         sectionGalleryMini.appendChild(workElement);
         workElement.appendChild(deleteIcon);
         workElement.appendChild(moveIcon);
         workElement.appendChild(imageElement);
         workElement.appendChild(editElement);
+
+
+        deleteIcon.addEventListener('click', deleteWork)
+        
     }
 }
 
 generateWorksMini(works);
- // Création d’une balise dédiée à un travail
-        /*const workElement = document.createElement("article");
-        workElement.dataset.id = works[i].id;
-        const deleteIcon = document.createElement("i");
-        deleteIcon.setAttribute('class', 'fa-solid fa-trash-can')
-        const moveIcon = document.createElement("i");
-        moveIcon.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right');
-        const imageElement = document.createElement("img");
-        imageElement.src = article.imageUrl;
-        const editElement = document.createElement("a");
-        editElement.setAttribute('href', '#')
-        editElement.innerText = "éditer";
-        
 
-        sectionGalleryMini.appendChild(workElement);
-        workElement.appendChild(deleteIcon);
-        workElement.appendChild(moveIcon);
-        workElement.appendChild(imageElement);
-        workElement.appendChild(editElement);*/
 
 
 //gestion boutons

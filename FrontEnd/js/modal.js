@@ -40,7 +40,7 @@ const closeModal = function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
-    addModal.style.display = 'none'
+    addModal.style.display = 'none' //PB sur addModal quand on click en dehos de la modale pour fermer
     workModal.style.display = null
     modal = null
 }
