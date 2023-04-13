@@ -67,9 +67,6 @@ async function deleteWork() {
                 
          })
 
-         
-    
-        //console.log(workToDelete[0]) 
     
 }}
 

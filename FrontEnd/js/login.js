@@ -5,9 +5,12 @@ function ajoutListenerLogin() {
     loginForm.addEventListener("submit", async function (event) {
             event.preventDefault();
 
-            for(let input of document.querySelectorAll(".login-form input")){
+
+           for(let input of document.querySelectorAll(".login-form input")){
                 input.reportValidity();
-            }
+                }
+
+
             // Création de l’objet de la combinaison user
             const user = {
                 email: event.target.querySelector("[name=email]").value,
