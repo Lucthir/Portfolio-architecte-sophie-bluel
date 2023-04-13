@@ -44,13 +44,39 @@ function generateWorks(works) {
 generateWorks(works);
 
 //Gallery mini
-function deleteWork() { //Il faut récupérer l'ID du work (vérifie d'abord avec console.log) qui a été supprimé et construire une fonction pour delete le work en question
-    alert("function declenchée")
-    return console.log("function declenchée")
-}
+async function deleteWork() { 
+
+    
+       
+    const workToDelete = JSON.parse(window.localStorage.getItem('worksids'))
+   
+    const validSuppress = confirm("Etes Vous Sur de vouloir supprimer ce travail ?")
+
+        if (validSuppress === true) {
+            alert("suppression")
+
+            let id = workToDelete[0]
+
+            let token = window.localStorage.getItem("token");
+
+            let response = await fetch(`http://localhost:5678/api/works/${id}`, {
+                method: "DELETE",
+                headers: {   
+                    'Authorization': 'Bearer ' + token,
+                },
+                
+         })
+
+         
+    
+        //console.log(workToDelete[0]) 
+    
+}}
 
 
 export function generateWorksMini(works) {
+    
+    
     
     for (let i=0; i < works.length; i++) {
 
@@ -61,6 +87,7 @@ export function generateWorksMini(works) {
         workElement.dataset.id = works[i].id;
         const deleteIcon = document.createElement("a");
         deleteIcon.setAttribute('class', 'delete-icon')
+        deleteIcon.id = works[i].id;
         deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
         const moveIcon = document.createElement("i");
         moveIcon.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right');
@@ -77,11 +104,26 @@ export function generateWorksMini(works) {
         workElement.appendChild(moveIcon);
         workElement.appendChild(imageElement);
         workElement.appendChild(editElement);
+   
+        //PB Obligé de faire l'event listener dans generate works ? car deleteIcon que ici et pas possible de queryselector sur un createElement
 
-
-        deleteIcon.addEventListener('click', deleteWork)
         
+        deleteIcon.addEventListener('click', pushID)
+       
+       function pushID() {
+                let worksIDArray = []
+                worksIDArray.push(deleteIcon.id)
+                console.log(worksIDArray) 
+                window.localStorage.setItem('worksids', JSON.stringify(worksIDArray))
+                deleteWork()
+            }
+    
     }
+    
+        
+
+        
+        
 }
 
 generateWorksMini(works);
