@@ -25,7 +25,7 @@ function ajoutListenerLogin() {
             });
 
             let result = await response.json();  
-                if (result.error) {
+                if (result.error || result.message == "user not found") {
                     document.querySelector('#login-wrong').style.display = null;
                 }else{
                     let token = result.token;

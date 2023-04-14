@@ -295,6 +295,10 @@ margin: auto;
 	margin-left : 10px;
 }
 
+#logout-btn{
+	margin-left : -20px;
+}
+
 /*Partie Edit mode*/
 
 #edit-top{
@@ -305,8 +309,7 @@ margin: auto;
 	justify-content: center;
 	gap:30px;
 	height:50px;
-	margin-left:-50%;
-	width:200%;
+	width:100%;
 }
 
 #edit-top a{
@@ -394,6 +397,7 @@ margin: auto;
 	flex-direction: column;
 	justify-content: center;
 	gap : 20px;
+	position:relative;
 }
 
 .modal-wrapper h2 {
@@ -403,10 +407,16 @@ margin: auto;
 	color: black;
 }
 
+.js-modal-close{
+	position:absolute;
+	top:5%;
+	right:3%;
+}
+
 /*Modale Work*/
 
 #modal-work{
-	display:flex;
+	display:none;
 	flex-direction: column;
 }
 
@@ -428,7 +438,7 @@ margin: auto;
 	text-align: center;
 	border-radius: 60px ;
 	text-decoration: none;
-
+	margin-top: 5%;
 }
 
 .modal-delete {
@@ -444,9 +454,10 @@ margin: auto;
 	flex-wrap: wrap;
 	justify-content: left;
 	gap : 10px;
-	margin-left: 13%;
+	margin-left: 15%;
 	margin-right: 13%;
-	margin-bottom : 8%;
+	margin-bottom : 10%;
+	margin-top : 3%;
 }
 
 .gallery-mini article{
@@ -472,7 +483,6 @@ margin: auto;
 	text-decoration: underline;
 }
 
-
 .fa-trash-can{
 	color: white;
 	background-color: black;
@@ -483,33 +493,21 @@ margin: auto;
 	justify-content: center;
 	align-items: center;
 	position : absolute;
-	top :5px;
+	top :7px;
 	right : 5px;
-}
-
-.gallery-mini article:hover .fa-arrows-up-down-left-right{
-	color: white;
-	background-color: black;
-	width:20px;
-	height:23px;
-	border-radius: 5px;
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	position: absolute;
-	top :5px;
-	right : 27px;
-}
-
-.fa-arrows-up-down-left-right{
-	display:none;
 }
 
 /*Modale Add*/
 
 #modal-add{
-	display:none;
+	display:flex;
 	flex-direction:column;
+}
+
+#back-modal-btn{
+	position : absolute;
+	top : 5%;
+	left : 5%;
 }
 
 #modal-add .add-form{
@@ -571,6 +569,9 @@ margin: auto;
 	margin-left : 20%;
 }
 
+#mandatory-input{
+	color: red;
+}
 
 #add-submit{
 	width : 40%;

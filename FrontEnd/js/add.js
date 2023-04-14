@@ -5,29 +5,31 @@ function checkAddForm () {
     let text = document.querySelector("#input-title");
     let button = document.querySelector("#add-submit");
 
-
     button.disabled = true; //setting button state to disabled
 
-    file.addEventListener("change", stateHandle);
-    text.addEventListener("change", stateHandle);
+    file.addEventListener("input", stateHandle);
+    text.addEventListener("input", stateHandle);
+    
 
     function stateHandle() {
-        if (document.querySelector("#input-image").value === null || document.querySelector("#input-title").value === "") {
+        //console.log(file.value)
+        //console.log(text.value)
+        if (file.value === "" || text.value === "") {
             button.disabled = true; //button remains disabled
+            button.style.backgroundColor = "#A7A7A7" 
+            
         } else {
             button.disabled = false;//button is enabled
             button.style.backgroundColor = "#1D6154" 
         }
-    }
-    
+    } 
+      
 }
+
 
 let goToAddModal = document.querySelector("#go-to-add-modal-btn")
     goToAddModal.addEventListener('click', checkAddForm)
 
-for(let input of document.querySelectorAll(".add-form input")){
-          input.reportValidity();
-    }
 
 //Fonction permettant d'envoyer le nouveau travail avec image titre et category
 
@@ -45,9 +47,9 @@ function addWork() {
 
             const formData = new FormData(newWork);
           
-                for (var key of formData.entries()) {
+                /*for (var key of formData.entries()) {
                     console.log(key[0] + ', ' + key[1]);
-                }
+                }*/
 
                 
             
@@ -64,10 +66,15 @@ function addWork() {
             
             
             let result = await response.json(); 
+                //alert(JSON.stringify(result))
+                if(JSON.stringify(result)!= '{"error":{}}') {
+                    alert("Projet Ajouté")
+                    window.location.href="./index.html";
+                } else {
+                    alert("Les informations sont incorrectes/manquantes")
+                }
                 
-                alert(JSON.stringify(result))  
                 
-                window.location.href="./index.html";
 
     }
 }

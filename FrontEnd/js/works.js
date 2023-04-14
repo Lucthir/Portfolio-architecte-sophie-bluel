@@ -50,16 +50,16 @@ async function deleteWork() {
        
     const workToDelete = JSON.parse(window.localStorage.getItem('worksids'))
    
-    const validSuppress = confirm("Etes Vous Sur de vouloir supprimer ce travail ?")
+    const validSuppress = confirm("Etes-vous sûr de vouloir supprimer ce travail ?")
 
         if (validSuppress === true) {
-            alert("suppression")
+           
 
             let id = workToDelete[0]
 
             let token = window.localStorage.getItem("token");
 
-            let response = await fetch(`http://localhost:5678/api/works/${id}`, {
+            await fetch(`http://localhost:5678/api/works/${id}`, {
                 method: "DELETE",
                 headers: {   
                     'Authorization': 'Bearer ' + token,
@@ -85,20 +85,17 @@ export function generateWorksMini(works) {
         const deleteIcon = document.createElement("a");
         deleteIcon.setAttribute('class', 'delete-icon')
         deleteIcon.id = works[i].id;
-        deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
-        const moveIcon = document.createElement("i");
-        moveIcon.setAttribute('class', 'fa-solid fa-arrows-up-down-left-right');
+        deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>' //TJ Pb affichage avec le save CSS
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
         const editElement = document.createElement("a");
         editElement.setAttribute('href', '#')
         editElement.innerText = "éditer";
         
-        //PB je dois save le CSS pour que les icones apparaissent correctement
+
 
         sectionGalleryMini.appendChild(workElement);
         workElement.appendChild(deleteIcon);
-        workElement.appendChild(moveIcon);
         workElement.appendChild(imageElement);
         workElement.appendChild(editElement);
    

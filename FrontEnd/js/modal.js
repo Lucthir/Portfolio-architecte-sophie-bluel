@@ -2,6 +2,8 @@ let modal = null
 const focusableSelector = 'button, a, input, textarea'
 let focusables = []
 let previouslyFocusedElement = null
+let addModal = document.querySelector('#modal-add')
+let workModal = document.querySelector("#modal-work")
 
 const openModal = function (e) {
     e.preventDefault()
@@ -9,6 +11,8 @@ const openModal = function (e) {
     focusables = Array.from(modal.querySelectorAll(focusableSelector))
     previouslyFocusedElement = document.querySelector (':focus') 
     modal.style.display = null
+    addModal.style.display = 'none'
+    workModal.style.display = 'flex'
     focusables[0].focus()
     modal.removeAttribute('aria-hidden')
     modal.setAttribute('aria-modal', 'true')
@@ -19,9 +23,7 @@ const openModal = function (e) {
 
 const openAddModal = function (e) {
     e.preventDefault()
-    addModal = document.querySelector(e.target.getAttribute('href'))
     addModal.style.display = 'flex'
-    workModal = document.querySelector("#modal-work")
     workModal.style.display = 'none'
     focusables = Array.from(modal.querySelectorAll(focusableSelector))
     previouslyFocusedElement = document.querySelector (':focus') 
@@ -29,6 +31,14 @@ const openAddModal = function (e) {
 }
 
 
+const backModal = function(e) {
+    e.preventDefault()
+    addModal.style.display = 'none'
+    workModal.style.display = 'flex'
+    document.getElementById("js-add-form").reset();
+}
+/*addModal.style.display = 'none' //PB sur addModal quand on click en dehos de la modale pour fermer
+    workModal.style.display = null*/
 
 const closeModal = function (e) {
     if (modal === null) return
@@ -40,8 +50,6 @@ const closeModal = function (e) {
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
-    addModal.style.display = 'none' //PB sur addModal quand on click en dehos de la modale pour fermer
-    workModal.style.display = null
     modal = null
 }
 
@@ -76,6 +84,9 @@ document.querySelectorAll(".js-modal").forEach(a => {
 document.querySelectorAll(".js-modal-add").forEach(a => {
     a.addEventListener('click', openAddModal)
 })
+
+document.querySelector('#back-modal-btn').addEventListener('click', backModal)
+
 
 window.addEventListener('keydown', function (e) {
     if (e.key === "Escape" || e.key === "Esc") {
