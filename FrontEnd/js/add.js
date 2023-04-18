@@ -21,6 +21,7 @@ function checkAddForm () {
         } else {
             button.disabled = false;//button is enabled
             button.style.backgroundColor = "#1D6154" 
+            button.style.cursor = "pointer"
         }
     } 
       

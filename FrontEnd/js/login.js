@@ -1,6 +1,6 @@
+//Fonction Login
 
-
-function ajoutListenerLogin() {
+function login() {
     const loginForm = document.querySelector(".login-form");
     loginForm.addEventListener("submit", async function (event) {
             event.preventDefault();
@@ -10,31 +10,28 @@ function ajoutListenerLogin() {
                 input.reportValidity();
                 }
 
-
             // Création de l’objet de la combinaison user
             const user = {
                 email: event.target.querySelector("[name=email]").value,
                 password: event.target.querySelector("[name=password]").value,
             };
-
             // Appel de la fonction fetch avec toutes les informations nécessaires
             let response = await fetch("http://localhost:5678/api/users/login", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(user)
             });
-
             let result = await response.json();  
                 if (result.error || result.message == "user not found") {
                     document.querySelector('#login-wrong').style.display = null;
                 }else{
-                    let token = result.token;
-                    
+                    let token = result.token;                    
                     window.localStorage.setItem("token", token);
                     window.location.href="./index.html";
             }    
         }); 
 }
 
-ajoutListenerLogin();
-
+  
+  document.querySelector('#login-submit').addEventListener('click', login)
+  

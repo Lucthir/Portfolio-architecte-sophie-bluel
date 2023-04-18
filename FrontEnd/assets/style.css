@@ -427,6 +427,10 @@ margin: auto;
 	margin-right: 3%;
 }
 
+.js-modal-close:hover{
+	cursor:pointer;
+}
+
 .modal-submit{
 	font-family: 'Syne';
 	font-weight: 700;
@@ -483,7 +487,13 @@ margin: auto;
 	text-decoration: underline;
 }
 
-.fa-trash-can{
+.decoration-line{
+	width: 70%;
+	resize: 1px;
+	color: #B3B3B3;
+}
+
+/*.fa-trash-can{
 	color: white;
 	background-color: black;
 	width:20px;
@@ -495,7 +505,7 @@ margin: auto;
 	position : absolute;
 	top :7px;
 	right : 5px;
-}
+}*/
 
 /*Modale Add*/
 
@@ -508,6 +518,10 @@ margin: auto;
 	position : absolute;
 	top : 5%;
 	left : 5%;
+}
+
+#back-modal-btn:hover{
+	cursor:pointer;
 }
 
 #modal-add .add-form{
@@ -564,7 +578,7 @@ margin: auto;
 
 #custom-category-label, #custom-title-label{
 	margin-top:20px;
-	margin-bottom:5x;
+	margin-bottom:5px;
 	align-self: self-start;
 	margin-left : 20%;
 }

@@ -37,14 +37,13 @@ const backModal = function(e) {
     workModal.style.display = 'flex'
     document.getElementById("js-add-form").reset();
 }
-/*addModal.style.display = 'none' //PB sur addModal quand on click en dehos de la modale pour fermer
-    workModal.style.display = null*/
 
 const closeModal = function (e) {
     if (modal === null) return
     if(previouslyFocusedElement !== null) previouslyFocusedElement.focus()
     e.preventDefault()
     modal.style.display = "none"
+    document.getElementById("js-add-form").reset();
     modal.setAttribute('aria-hidden', 'true')
     modal.removeAttribute('aria-modal')
     modal.removeEventListener('click', closeModal)

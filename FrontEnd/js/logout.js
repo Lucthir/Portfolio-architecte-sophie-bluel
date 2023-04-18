@@ -1,3 +1,5 @@
+
+
 const logout = function () {
   console.log("fonction logout declenchée")
     localStorage.clear();

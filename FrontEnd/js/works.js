@@ -16,7 +16,7 @@ if (works === null) {
 }
 
 
-
+//Fonction de génération des travaux à partir de l'API
 
 function generateWorks(works) {
     
@@ -43,49 +43,56 @@ function generateWorks(works) {
 
 generateWorks(works);
 
-//Gallery mini
-async function deleteWork() { 
 
-    
-       
-    const workToDelete = JSON.parse(window.localStorage.getItem('worksids'))
+//Fonction de suppression des travaux
+
+async function deleteWork() { 
    
+    const workToDelete = JSON.parse(window.localStorage.getItem('worksIds'))  
     const validSuppress = confirm("Etes-vous sûr de vouloir supprimer ce travail ?")
 
         if (validSuppress === true) {
            
-
             let id = workToDelete[0]
-
             let token = window.localStorage.getItem("token");
 
             await fetch(`http://localhost:5678/api/works/${id}`, {
                 method: "DELETE",
                 headers: {   
                     'Authorization': 'Bearer ' + token,
-                },
-                
-         })
-
-    
+                },                
+         })   
 }}
 
 
+//Fonction de création de la gallery en petit format dans la modale
+
 export function generateWorksMini(works) {
-    
-    
-    
+       
     for (let i=0; i < works.length; i++) {
 
-        const article = works[i];
-        
+        const article = works[i];  
         const sectionGalleryMini = document.querySelector(".gallery-mini");
         const workElement = document.createElement("article");
         workElement.dataset.id = works[i].id;
-        const deleteIcon = document.createElement("a");
-        deleteIcon.setAttribute('class', 'delete-icon')
+        const deleteIcon = document.createElement("i");
+
+        //deleteIcon.setAttribute('class', 'delete-icon')
+        deleteIcon.setAttribute('class', 'fa-solid fa-trash-can');
         deleteIcon.id = works[i].id;
-        deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>' //TJ Pb affichage avec le save CSS
+        deleteIcon.style.color = "white";
+        deleteIcon.style.display = "flex";
+        deleteIcon.style.background = "black";
+        deleteIcon.style.justifyContent= "center";
+        deleteIcon.style.alignItems="center";
+        deleteIcon.style.width = "20px";
+        deleteIcon.style.borderRadius = "5px";
+        deleteIcon.style.height="23px";
+        deleteIcon.style.position = "absolute";
+        deleteIcon.style.top = "7px";
+        deleteIcon.style.right = "5px";
+        
+        //deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>' //TJ Pb affichage avec le save CSS
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
         const editElement = document.createElement("a");
@@ -98,33 +105,27 @@ export function generateWorksMini(works) {
         workElement.appendChild(deleteIcon);
         workElement.appendChild(imageElement);
         workElement.appendChild(editElement);
-   
-        //PB Obligé de faire l'event listener dans generate works ? car deleteIcon que ici et pas possible de queryselector sur un createElement
-
-        
+    
         deleteIcon.addEventListener('click', pushID)
-       
-       function pushID() {
+
+       //Fonction qui, à chaque click sur l'icone de delete, stocke l'ID du travail en question pour l'utiliser dans deleteWorks ensuite
+       function pushID() {  
                 let worksIDArray = []
                 worksIDArray.push(deleteIcon.id)
                 console.log(worksIDArray) 
-                window.localStorage.setItem('worksids', JSON.stringify(worksIDArray))
+                window.localStorage.setItem('worksIds', JSON.stringify(worksIDArray))
                 deleteWork()
             }
     
     }
-    
-        
-
-        
-        
+      
 }
 
 generateWorksMini(works);
 
 
 
-//gestion boutons
+//Gestion des boutons
 
 //filter All
 
