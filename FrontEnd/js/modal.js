@@ -76,6 +76,8 @@ const focusInModal = function (e) {
     focusables[index.focus()]
 }
 
+//EventListeners
+
 document.querySelectorAll(".js-modal").forEach(a => {
     a.addEventListener('click', openModal)
 })

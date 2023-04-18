@@ -116,9 +116,7 @@ export function generateWorksMini(works) {
                 window.localStorage.setItem('worksIds', JSON.stringify(worksIDArray))
                 deleteWork()
             }
-    
-    }
-      
+    }      
 }
 
 generateWorksMini(works);
