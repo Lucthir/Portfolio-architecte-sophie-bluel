@@ -493,7 +493,7 @@ margin: auto;
 	color: #B3B3B3;
 }
 
-/*.fa-trash-can{
+#trash-can{
 	color: white;
 	background-color: black;
 	width:20px;
@@ -505,7 +505,7 @@ margin: auto;
 	position : absolute;
 	top :7px;
 	right : 5px;
-}*/
+}
 
 /*Modale Add*/
 

@@ -75,32 +75,15 @@ export function generateWorksMini(works) {
         const sectionGalleryMini = document.querySelector(".gallery-mini");
         const workElement = document.createElement("article");
         workElement.dataset.id = works[i].id;
-        const deleteIcon = document.createElement("i");
-
-        //deleteIcon.setAttribute('class', 'delete-icon')
-        deleteIcon.setAttribute('class', 'fa-solid fa-trash-can');
+        const deleteIcon = document.createElement("a");
+        deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can" id="trash-can"></i>'
+        deleteIcon.setAttribute('class', 'delete-icon')       
         deleteIcon.id = works[i].id;
-        deleteIcon.style.color = "white";
-        deleteIcon.style.display = "flex";
-        deleteIcon.style.background = "black";
-        deleteIcon.style.justifyContent= "center";
-        deleteIcon.style.alignItems="center";
-        deleteIcon.style.width = "20px";
-        deleteIcon.style.borderRadius = "5px";
-        deleteIcon.style.height="23px";
-        deleteIcon.style.position = "absolute";
-        deleteIcon.style.top = "7px";
-        deleteIcon.style.right = "5px";
-        
-        //deleteIcon.innerHTML = '<i class="fa-solid fa-trash-can"></i>' //TJ Pb affichage avec le save CSS
         const imageElement = document.createElement("img");
         imageElement.src = article.imageUrl;
         const editElement = document.createElement("a");
-        editElement.setAttribute('href', '#')
+        editElement.setAttribute('href', '#');
         editElement.innerText = "éditer";
-        
-
-
         sectionGalleryMini.appendChild(workElement);
         workElement.appendChild(deleteIcon);
         workElement.appendChild(imageElement);

@@ -14,7 +14,7 @@ function checkAddForm () {
     function stateHandle() {
         //console.log(file.value)
         //console.log(text.value)
-        if (file.value === "" || text.value === "") {
+        if (file.value === "") {
             button.disabled = true; //button reste désactivé
             button.style.backgroundColor = "#A7A7A7"      
         } else {
@@ -25,6 +25,9 @@ function checkAddForm () {
     }  
 }
 
+for(let input of document.querySelectorAll(".add-form input")){
+    input.reportValidity();
+    }
 
 let goToAddModal = document.querySelector(".js-modal-add")
     goToAddModal.addEventListener('click', checkAddForm)
